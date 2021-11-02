@@ -7,13 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServersComponent implements OnInit {
 
-  btnClick = false;
+  online = true;
 
   constructor() {}
 
   ngOnInit(): void {}
-  btnCliquer() {
-    this.btnClick =true;
+
+  toggleOnline() {
+    this.online = !this.online;
+  }
+
+  getColor() {
+    return this.online ? "green":"red";
   }
 
 }

@@ -1,5 +1,4 @@
-<button class="btn btn-danger" (click)="btnCliquer()">Click</button>
-<p *ngIf="!btnClick">Cliquer sur le bouton pour afficher le nom</p>
-<p *ngIf="btnClick">j'ai 15ans</p>
+<button class="btn btn-primary" (click)="toggleOnline()">Click</button>
 
-<p>{{btnClick}}</p>
+<p [ngStyle]="{color: getColor()}">Le statut est : {{online ? "en":"hors"}} ligne</p>
+<p [ngStyle]="{color: online ? 'green':'red',fontSize:'18px'}">Le statut est : {{online ? "en":"hors"}} ligne</p>
