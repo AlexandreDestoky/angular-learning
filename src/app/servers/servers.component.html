@@ -1,7 +1,11 @@
-<!-- <button class="btn btn-primary" (click)="toggleOnline()">Click</button> -->
+<button class="btn btn-primary" (click)="togglePara()">Display Details</button>
 
-<ul>
-  <li *ngFor="let prenom of prenoms; let i = index;let paire = even;" [ngClass]="paire ? 'fondRouge':'fondVert'" class="card">
-    {{ i + 1 }}. {{ prenom[0].toUpperCase() + prenom.slice(1) }}
-  </li>
-</ul>
+<p *ngIf="para">Secret Password = 'tuna'</p>
+
+<p
+  *ngFor="let date of clickLog; let i = index"
+  [ngClass]="i >=5 ? 'blanc':''"
+  [ngStyle]="{'background': i >= 5 &&'blue'}"
+>
+  {{ date }}
+</p>

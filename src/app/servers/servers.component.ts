@@ -6,9 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./servers.component.css'],
 })
 export class ServersComponent implements OnInit {
-  prenoms = ['jean', 'pierre', 'thomas', 'benoit', 'sarah'];
+  para = false;
+  clickLog = [];
 
   constructor() {}
 
   ngOnInit(): void {}
+  togglePara() {
+    this.para = !this.para;
+    let date = new Date(Date.now());
+    this.clickLog.push(date.getMinutes() + ":"+date.getSeconds());
+    console.log(this.clickLog)
+
+  }
 }
