@@ -1,6 +1,6 @@
 <button class="btn btn-primary" [disabled]="allowNewServer">Click</button>
 
-<p [classList]="bordure">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est, earum.</p>
-
+<button class="btn btn-danger" (click)="onCreateServer()">Créer serveur</button>
+<p>{{serverCreationStatus}}</p>
 
 <!-- <app-server></app-server> -->
