@@ -6,20 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./servers.component.css'],
 })
 export class ServersComponent implements OnInit {
-
-  online = true;
-  age = 19;
+  prenoms = ['jean', 'pierre', 'thomas', 'benoit', 'sarah'];
 
   constructor() {}
 
   ngOnInit(): void {}
-
-  toggleOnline() {
-    this.online = !this.online;
-  }
-
-  getColor() {
-    return this.online ? "green":"red";
-  }
-
 }
