@@ -1,6 +1,14 @@
-<button class="btn btn-primary" [disabled]="allowNewServer">Click</button>
+<input
+  type="text"
+  class="form-control"
+  (input)="onUpdateServerName($event)"
+  [(ngModel)]="valInput"
+/>
+<input
+  type="text"
+  class="form-control"
+  (input)="onUpdateServerName($event)"
+/>
 
-<button class="btn btn-danger" (click)="onCreateServer()">Créer serveur</button>
-<p>{{serverCreationStatus}}</p>
-
+<p>{{ valInput }}</p>
 <!-- <app-server></app-server> -->
