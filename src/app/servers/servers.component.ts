@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ServersComponent implements OnInit {
 
   online = true;
+  age = 19;
 
   constructor() {}
 

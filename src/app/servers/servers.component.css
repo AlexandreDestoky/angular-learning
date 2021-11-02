@@ -1,3 +1,19 @@
-.bordureNoire {
-  border:2px solid black;
+.fondVert {
+  background-color: rgb(104, 192, 104);
+  border: 2px solid green;
+}
+
+.card {
+  color: #eee;
+  padding: 15px;
+}
+
+.fondRouge {
+  background-color: rgb(221, 63, 63);
+  border: 2px solid red;
+}
+
+.danger {
+  font-weight: bold;
+  text-decoration: underline;
 }

@@ -1,4 +1,12 @@
 <button class="btn btn-primary" (click)="toggleOnline()">Click</button>
 
-<p [ngStyle]="{color: getColor()}">Le statut est : {{online ? "en":"hors"}} ligne</p>
-<p [ngStyle]="{color: online ? 'green':'red',fontSize:'18px'}">Le statut est : {{online ? "en":"hors"}} ligne</p>
+<!-- Style en ligne -->
+<!-- <p [ngStyle]="{color: getColor()}">Le statut est : {{online ? "en":"hors"}} ligne</p>
+<p [ngStyle]="{background: online ? 'green':'red',color:'#eee'}">Le statut est : {{online ? "en":"hors"}} ligne</p> -->
+
+<hr>
+
+<!-- Style en classe -->
+
+<p [ngClass]="{fondVert:online,danger: age < 18}" class="card">Le statut est : {{online ? "en":"hors"}} ligne</p>
+<p [ngClass]="online ? 'fondVert':'fondRouge'" class="card">Le statut est : {{online ? "en":"hors"}} ligne</p>
