@@ -4,11 +4,7 @@
   (input)="onUpdateServerName($event)"
   [(ngModel)]="valInput"
 />
-<input
-  type="text"
-  class="form-control"
-  (input)="onUpdateServerName($event)"
-/>
+<button class="btn btn-success" (click)="onCreation()">Click</button>
 
-<p>{{ valInput }}</p>
+<p>{{status}}</p>
 <!-- <app-server></app-server> -->

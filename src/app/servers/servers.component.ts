@@ -7,12 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServersComponent implements OnInit {
   valInput = 'Jean';
+  status = "Aucun évenement"
 
   constructor() {}
 
   ngOnInit(): void {}
 
-  onUpdateServerName(e) {
+  onUpdateServerName(e:Event) {
     this.valInput = (<HTMLInputElement>e.target).value;
+  }
+  onCreation() {
+    this.status= "Evenement créer, avec le texte : " + this.valInput;
   }
 }
