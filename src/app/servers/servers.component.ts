@@ -6,17 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./servers.component.css'],
 })
 export class ServersComponent implements OnInit {
-  valInput = 'Jean';
-  status = "Aucun évenement"
+
+  btnClick = false;
 
   constructor() {}
 
   ngOnInit(): void {}
+  btnCliquer() {
+    this.btnClick =true;
+  }
 
-  onUpdateServerName(e:Event) {
-    this.valInput = (<HTMLInputElement>e.target).value;
-  }
-  onCreation() {
-    this.status= "Evenement créer, avec le texte : " + this.valInput;
-  }
 }

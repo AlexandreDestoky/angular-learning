@@ -1,10 +1,5 @@
-<input
-  type="text"
-  class="form-control"
-  (input)="onUpdateServerName($event)"
-  [(ngModel)]="valInput"
-/>
-<button class="btn btn-success" (click)="onCreation()">Click</button>
+<button class="btn btn-danger" (click)="btnCliquer()">Click</button>
+<p *ngIf="!btnClick">Cliquer sur le bouton pour afficher le nom</p>
+<p *ngIf="btnClick">j'ai 15ans</p>
 
-<p>{{status}}</p>
-<!-- <app-server></app-server> -->
+<p>{{btnClick}}</p>
