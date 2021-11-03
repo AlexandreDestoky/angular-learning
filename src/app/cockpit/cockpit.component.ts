@@ -15,22 +15,18 @@ export class CockpitComponent implements OnInit {
     serverContent: string;
   }>();
 
-  newServerName = '';
+  // newServerName = '';
   newServerContent = '';
 
-  onAddServer() {
-    if(this.newServerName === "" || this.newServerContent === "") return;
+  onAddServer(nameInput:HTMLInputElement) {
     this.serverCreated.emit({
-      serverName: this.newServerName,
+      serverName: nameInput.value,
       serverContent: this.newServerContent
     });
-    this.newServerName="";
-    this.newServerContent="";
   }
-  onAddBlueprint() {
-    if(this.newServerName === "" || this.newServerContent === "") return;
+  onAddBlueprint(nameInput:HTMLInputElement) {
     this.blueprintCreated.emit({
-      serverName: this.newServerName,
+      serverName: nameInput.value,
       serverContent: this.newServerContent
     });
   }
