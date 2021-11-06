@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 
 import { CockpitComponent } from './cockpit/cockpit.component';
 import { ServerElementComponent } from './server-element/server-element.component';
+import { AccountComponent } from './account/account.component';
+import { NewAccountComponent } from './new-account/new-account.component';
 import { BasicHighlightDirective } from './basic-highlight/basic-highlight.directive';
 import { BetterHighlightDirective } from './better-highlight/better-highlight.directive';
 import { UnlessDirective } from './unless.directive';
@@ -15,6 +17,8 @@ import { UnlessDirective } from './unless.directive';
     AppComponent,
     CockpitComponent,
     ServerElementComponent,
+    AccountComponent,
+    NewAccountComponent,
     BasicHighlightDirective,
     BetterHighlightDirective,
     UnlessDirective
