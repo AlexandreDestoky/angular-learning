@@ -1,6 +1,0 @@
-<h1>TodoList</h1>
-<form (ngSubmit)="addTodo($event)">
-  <input type="text" placeholder="what needs to be done ?" name="task" [ngModel]="task" (input)="task = $event.target.value">
-  <button class="btn btn-primary" type="submit">+</button>
-</form>
-<app-todo [liste]="taskList" (todo)="onDelete($event)"></app-todo>
