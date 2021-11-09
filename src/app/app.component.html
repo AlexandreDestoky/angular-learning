@@ -1,0 +1,44 @@
+<p>
+  Créer un mini programme qui me permet d'avoir un montant et de connaitre le
+  montant de la tva et le montant total (TVA changable), bonus : le programme
+  fonctionne aussi en inversé on peut mettre le total et avoir la valeur
+  initialle
+</p>
+
+<div class="montant">
+  <label for="montant">Montant HTVA</label>
+  <input
+    type="number"
+    name="montant"
+    ngModel="{{ montant }}"
+    (input)="montant = getValue($event); calcTotal()"
+  />
+</div>
+<div class="tva">
+  <label for="tva">TVA</label>
+  <select
+    name="tva"
+    id="tva"
+    ngModel="{{ tva }}"
+    (input)="tva = getValue($event); calcTotal()"
+  >
+    <option value="" disabled>Choisir un montant</option>
+    <option value="6">6 %</option>
+    <option value="12">12 %</option>
+    <option value="21">21 %</option>
+  </select>
+</div>
+<div class="total">
+  <label for="total">TOTAL</label>
+  <input
+    type="number"
+    ngModel="{{ total }}"
+    (input)="total = getValue($event); calcHTVA()"
+  />
+</div>
+
+<ol>
+  <li>{{ montant }}</li>
+  <li>{{ tva }}</li>
+  <li>{{ total }}</li>
+</ol>

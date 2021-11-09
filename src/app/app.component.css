@@ -5,3 +5,13 @@
 p {
   color: blue;
 }
+
+
+div {
+  display: flex;
+  flex-direction: column;
+  /* width: 70%; */
+  max-width: 200px;
+  margin:auto;
+  margin-bottom: 10px;
+}
