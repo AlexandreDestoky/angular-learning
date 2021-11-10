@@ -1,44 +1,34 @@
-<p>
-  Créer un mini programme qui me permet d'avoir un montant et de connaitre le
-  montant de la tva et le montant total (TVA changable), bonus : le programme
-  fonctionne aussi en inversé on peut mettre le total et avoir la valeur
-  initialle
-</p>
+<h1>My First Attribute Directive</h1>
 
-<div class="montant">
-  <label for="montant">Montant HTVA</label>
-  <input
-    type="number"
-    name="montant"
-    ngModel="{{ montant }}"
-    (input)="montant = getValue($event); calcTotal()"
-  />
+<h2>Pick a highlight color</h2>
+<div>
+  <input type="radio" name="colors" (click)="color = 'lightgreen'" />Green
+  <input type="radio" name="colors" (click)="color = 'yellow'" />Yellow
+  <input type="radio" name="colors" (click)="color = 'cyan'" />Cyan
 </div>
-<div class="tva">
-  <label for="tva">TVA</label>
-  <select
-    name="tva"
-    id="tva"
-    ngModel="{{ tva }}"
-    (input)="tva = getValue($event); calcTotal()"
-  >
-    <option value="" disabled>Choisir un montant</option>
-    <option value="6">6 %</option>
-    <option value="12">12 %</option>
-    <option value="21">21 %</option>
-  </select>
-</div>
-<div class="total">
-  <label for="total">TOTAL</label>
-  <input
-    type="number"
-    ngModel="{{ total }}"
-    (input)="total = getValue($event); calcHTVA()"
-  />
+<p [appHighlight]="color">Highlight me!</p>
+
+<p [appHighlight]="color" defaultColor="violet">Highlight me too!</p>
+
+<hr />
+<h2>Mouse over the following lines to see fixed highlights</h2>
+
+<p [appHighlight]="'yellow'">Highlighted in yellow</p>
+<p appHighlight="orange">Highlighted in orange</p>
+
+<hr />
+
+<h2>ngNonBindable</h2>
+<p>Use ngNonBindable to stop evaluation.</p>
+<p ngNonBindable>This should not evaluate: {{ 1 + 1 }}</p>
+
+<h3>ngNonBindable with a directive</h3>
+<div ngNonBindable [appHighlight]="'yellow'">
+  This should not evaluate: {{ 1 + 1 }}, but will highlight yellow.
 </div>
 
-<ol>
-  <li>{{ montant }}</li>
-  <li>{{ tva }}</li>
-  <li>{{ total }}</li>
-</ol>
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->
