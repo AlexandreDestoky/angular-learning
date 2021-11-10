@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  color = '';
+  tva = 0.06;
+  date = new Date();
+  prenom="alexandre";
+  prenom2 = "patrick";
 }

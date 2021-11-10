@@ -4,12 +4,14 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HighlightDirective } from './highlight.directive';
+import { AbbrevPipe } from './abbrev.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HighlightDirective,
+    AbbrevPipe,
   ],
   imports: [
     BrowserModule,
