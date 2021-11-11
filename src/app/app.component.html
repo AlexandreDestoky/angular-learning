@@ -1,6 +1,6 @@
-<p>la tva est de : {{ tva | percent }}</p>
-<p>la tva est de : {{ tva * 100 + "%" }}</p>
-
-
-<p>Mon prénom est : {{prenom | abbrev:4}}</p>
-<p>Mon prénom est : {{prenom2 | abbrev:3}}</p>
+<h1>Je suis l'APP</h1>
+<p>Appelle de card list avec tableau de films :</p>
+<app-card-list [cards]="films"></app-card-list>
+<hr>
+<p>Appelle de card list avec tableau de series :</p>
+<app-card-list [cards]="series"></app-card-list>

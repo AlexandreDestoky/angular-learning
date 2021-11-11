@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HighlightDirective } from './highlight.directive';
 import { AbbrevPipe } from './abbrev.pipe';
+import { CardListComponent } from './card-list/card-list.component';
 
 
 @NgModule({
@@ -12,6 +13,7 @@ import { AbbrevPipe } from './abbrev.pipe';
     AppComponent,
     HighlightDirective,
     AbbrevPipe,
+    CardListComponent,
   ],
   imports: [
     BrowserModule,
