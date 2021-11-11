@@ -1,7 +1,6 @@
-<h1>Je suis l'APP</h1>
+<div class="container">
+  <app-cockpit (addBluePrint)="onAddBlueprint($event)" (addServer)="onAddServer($event)"></app-cockpit>
+  <hr />
+  <app-server-element [serverElements]="serverList"></app-server-element>
+</div>
 
-<p>Appelle de card list avec tableau de films :</p>
-<app-card-list [cards]="films" (cardSup)="deleteElement($event,'films')"></app-card-list>
-<hr>
-<p>Appelle de card list avec tableau de series :</p>
-<app-card-list [cards]="series"(cardSup)="deleteElement($event,'series')"></app-card-list>

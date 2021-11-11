@@ -1,6 +1,4 @@
-import { Component } from '@angular/core';
-import { Card } from './card.modele';
-
+import { Component, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,47 +6,23 @@ import { Card } from './card.modele';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  films: Card[] = [
-    {
-      imgUrl: 'https://picsum.photos/id/237/200',
-      prenom: 'David',
-      nom: 'Chrish',
-      note: 2,
-      txt: 'Lorem Card 1ipsum dolor sit amet consectetur adipisicing elit. Enim saepe voluptas ad autem molestiae accusantium!',
-    },
-    {
-      imgUrl: 'https://picsum.photos/id/236/200',
-      prenom: 'Kristina',
-      nom: 'Bellis',
-      note: 3,
-      txt: 'Lorem Card 2ipsum dolor sit amet consectetur adipisicing elit. Enim saepe voluptas ad autem molestiae accusantium!',
-    },
-    {
-      imgUrl: 'https://picsum.photos/id/235/200',
-      prenom: 'Stephen',
-      nom: 'Mario',
-      note: 4,
-      txt: 'Lorem Card 3ipsum dolor sit amet consectetur adipisicing elit. Enim saepe voluptas ad autem molestiae accusantium!',
-    },
-  ];
-  series: Card[] = [
-    {
-      imgUrl: 'https://picsum.photos/id/239/200',
-      prenom: 'Shrek',
-      nom: 'Bellis',
-      note: 5,
-      txt: 'Lorem Card 2ipsum dolor sit amet consectetur adipisicing elit. Enim saepe voluptas ad autem molestiae accusantium!',
-    },
-    {
-      imgUrl: 'https://picsum.photos/id/225/200',
-      prenom: 'Transformers',
-      nom: 'Mario',
-      note: 0,
-      txt: 'Lorem Card 3ipsum dolor sit amet consectetur adipisicing elit. Enim saepe voluptas ad autem molestiae accusantium!',
-    },
-  ]
+  serverList = [];
 
-  deleteElement(i:number,liste:string) {
-    this[liste].splice(i,1);
+  onAddServer(server) {
+    console.log(server);
+    this.serverList.push({
+      type: 'server',
+      name: server.serverName,
+      content: server.serverContent,
+    });
   }
+
+  onAddBlueprint(server) {
+    this.serverList.push({
+      type: 'blueprint',
+      name: server.serverName,
+      content: server.serverContent,
+    });
+  }
+
 }

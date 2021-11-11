@@ -9,3 +9,7 @@ p {
   font-size: 2rem;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+hr {
+  border-top:4px solid #eee;
+}
