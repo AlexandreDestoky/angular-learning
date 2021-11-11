@@ -47,4 +47,8 @@ export class AppComponent {
       txt: 'Lorem Card 3ipsum dolor sit amet consectetur adipisicing elit. Enim saepe voluptas ad autem molestiae accusantium!',
     },
   ]
+
+  deleteElement(i:number,liste:string) {
+    this[liste].splice(i,1);
+  }
 }

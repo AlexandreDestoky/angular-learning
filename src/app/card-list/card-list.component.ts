@@ -1,16 +1,20 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Card } from '../card.modele';
 
 @Component({
   selector: 'app-card-list',
   templateUrl: './card-list.component.html',
-  styleUrls: ['./card-list.component.css']
+  styleUrls: ['./card-list.component.css'],
 })
 export class CardListComponent implements OnInit {
-  @Input() cards:Card[];
-  constructor() { }
+  @Input() cards: Card[];
+  @Output() cardSup = new EventEmitter<number>();
 
-  ngOnInit(): void {
+  constructor() {}
+
+  ngOnInit(): void {}
+
+  deleteCard(index: number) {
+    this.cardSup.emit(index);
   }
-
 }

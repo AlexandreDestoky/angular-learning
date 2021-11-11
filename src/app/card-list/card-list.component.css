@@ -6,6 +6,7 @@
   border-radius: 10px;
   margin:10px;
   display: inline-block;
+  position: relative;
 }
 
 .txt {
@@ -18,4 +19,12 @@ img {
 
 button {
   margin:5px;
+}
+
+.croix {
+  position: absolute;
+  cursor: pointer;
+  font-size: 25px;
+  right:10px;
+  top:10px;
 }
