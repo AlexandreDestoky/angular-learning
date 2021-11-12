@@ -1,6 +1,14 @@
 <div class="container">
-  <app-cockpit (addBluePrint)="onAddBlueprint($event)" (addServer)="onAddServer($event)"></app-cockpit>
+  <app-cockpit
+    (addBluePrint)="onAddBlueprint($event)"
+    (addServer)="onAddServer($event)"
+  >
+  <div [ngSwitch]="7">
+    <p *ngSwitchCase="1">Nul c'est lundi</p>
+    <p *ngSwitchCase="7">Chouette c'est dimanche</p>
+    <p *ngSwitchDefault>Ni lundi, ni dimanche</p>
+  </div>
+</app-cockpit>
   <hr />
   <app-server-element [serverElements]="serverList"></app-server-element>
 </div>
-
