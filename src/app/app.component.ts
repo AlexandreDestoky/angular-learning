@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Product } from './product.modele';
+import { ProductService } from './product.service';
 
 @Component({
   selector: 'app-root',
@@ -6,23 +8,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  serverList = [];
+  products:Product[];
+  productService:ProductService;
 
-  onAddServer(server) {
-    console.log(server);
-    this.serverList.push({
-      type: 'server',
-      name: server.serverName,
-      content: server.serverContent,
-    });
+  constructor() {
+    this.productService = new ProductService();
   }
-
-  onAddBlueprint(server) {
-    this.serverList.push({
-      type: 'blueprint',
-      name: server.serverName,
-      content: server.serverContent,
-    });
+  getProducts() {
+    this.products = this.productService.getProducts();
+    console.log(this.products)
   }
 
 }
