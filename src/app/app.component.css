@@ -3,8 +3,11 @@
 }
 
 .nav {
-  background-color: darkgray;
+  background-color: #eee;
+  border-bottom:none;
 }
+
+
 
 .active {
   border-bottom:4px solid cornflowerblue;
