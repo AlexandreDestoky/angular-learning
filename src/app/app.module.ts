@@ -11,6 +11,8 @@ import { UserComponent } from './users/user/user.component';
 import { EditServerComponent } from './servers/edit-server/edit-server.component';
 import { ServerComponent } from './servers/server/server.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ErrorComponent } from './error/error.component';
+
 
 
 @NgModule({
@@ -21,7 +23,8 @@ import { AppRoutingModule } from './app-routing.module';
     ServersComponent,
     UserComponent,
     EditServerComponent,
-    ServerComponent
+    ServerComponent,
+    ErrorComponent,
   ],
   imports: [
     BrowserModule,
