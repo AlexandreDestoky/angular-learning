@@ -14,6 +14,7 @@ export class UserComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.paramsSubscription= this.activatedRoute.paramMap.subscribe((params) => {
+      console.log(params)
       console.log(params.get('id'));
       this.user = {
         id: +params.get('id'),
