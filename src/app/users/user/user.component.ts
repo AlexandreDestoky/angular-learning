@@ -1,18 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css'],
 })
-export class UserComponent implements OnInit {
+export class UserComponent implements OnInit, OnDestroy {
   user: { id: number; name: string };
 
-  constructor(private activatedRoute: ActivatedRoute) {}
+  constructor(private activatedRoute: ActivatedRoute, private paramsSubscription:Subscription) {}
 
   ngOnInit() {
-    this.activatedRoute.paramMap.subscribe((params) => {
+    this.paramsSubscription= this.activatedRoute.paramMap.subscribe((params) => {
       console.log(params.get('id'));
       this.user = {
         id: +params.get('id'),
@@ -20,5 +21,10 @@ export class UserComponent implements OnInit {
       };
       console.log(this.user.id);
     });
+  }
+
+  ngOnDestroy(): void {
+   this.paramsSubscription.unsubscribe();
+    
   }
 }
