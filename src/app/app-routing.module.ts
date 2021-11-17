@@ -18,7 +18,7 @@ const routes: Routes = [
     component: ServersComponent,
     children: [
       { path: ':id', component: ServerComponent },
-      { path: ':id/edit', component: EditServerComponent },
+      { path: ':id/edit', component: EditServerComponent , data:{message:"Page Test"}},
     ],
   },
   { path: '**', component: ErrorComponent },
