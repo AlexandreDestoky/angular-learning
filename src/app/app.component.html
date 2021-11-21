@@ -4,6 +4,7 @@
 <table class='table'>
   <thead>
     <tr>
+      <th>N°</th>
       <th>ID</th>
       <th>Name</th>
       <th>HTML Url</th>
@@ -11,7 +12,8 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let repo of repos;">
+    <tr *ngFor="let repo of repos;let i =index">
+      <td>{{i+1}}</td>
       <td>{{repo.id}}</td>
       <td>{{repo.name}}</td>
       <td>{{repo.html_url}}</td>
@@ -21,5 +23,3 @@
 </table> 
  
 <!-- <pre>{{repos | json}}</pre> -->
-
-<p>{{repos[0] | json}}</p>
