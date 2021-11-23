@@ -36,7 +36,8 @@ export class PostsService {
       .get<{ [key: string]: Post }>(
         'https://test-angular-f9eba-default-rtdb.europe-west1.firebasedatabase.app/posts.json',
         { headers: new HttpHeaders({ 'Custom-Header': 'Hello' }),
-        params : new HttpParams().set("Salut","Jean")
+        params : new HttpParams().set("Salut","Jean"),
+        responseType: "json"
        }
       )
       .pipe(
