@@ -17,7 +17,9 @@ export class PostsService {
     this.http
       .post<{ name: string }>(
         'https://test-angular-f9eba-default-rtdb.europe-west1.firebasedatabase.app/posts.json',
-        postData
+        postData, {
+          observe: "body"
+        }
       )
       .subscribe(
         (responseData) => {
