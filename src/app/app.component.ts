@@ -32,6 +32,7 @@ export class AppComponent implements OnInit ,OnDestroy{
       },
       (error) => {
         this.error = error.message;
+        this.isFetching =false;
         console.log(error.error)
       }
     );
@@ -53,6 +54,9 @@ export class AppComponent implements OnInit ,OnDestroy{
     });
   }
 
+  onHandleError() {
+    this.error = null;
+  }
   private fetchPosts() {
     this.isFetching = true;
     this.postsService.fetchPosts().subscribe(
@@ -63,6 +67,7 @@ export class AppComponent implements OnInit ,OnDestroy{
       },
       (error) => {
         this.error = error.message;
+        this.isFetching = false;
       }
     );
   }
