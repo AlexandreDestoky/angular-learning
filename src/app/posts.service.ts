@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Post } from './post.model';
 import { catchError, map } from 'rxjs/operators';
@@ -8,7 +8,7 @@ import { Subject, throwError } from 'rxjs';
   providedIn: 'root',
 })
 export class PostsService {
-  error= new Subject<string>();
+  error = new Subject<string>();
 
   constructor(private http: HttpClient) {}
 
@@ -19,17 +19,21 @@ export class PostsService {
         'https://test-angular-f9eba-default-rtdb.europe-west1.firebasedatabase.app/posts.json',
         postData
       )
-      .subscribe((responseData) => {
-        console.log(responseData);
-      }, error => {
-        this.error.next(error.message);
-      });
+      .subscribe(
+        (responseData) => {
+          console.log(responseData);
+        },
+        (error) => {
+          this.error.next(error.message);
+        }
+      );
   }
 
   fetchPosts() {
     return this.http
       .get<{ [key: string]: Post }>(
-        'https://test-angular-f9eba-default-rtdb.europe-west1.firebasedatabase.app/posts.json'
+        'https://test-angular-f9eba-default-rtdb.europe-west1.firebasedatabase.app/posts.json',
+        { headers: new HttpHeaders({ 'Custom-Header': 'Hello' }) }
       )
       .pipe(
         map((responseData) => {
@@ -41,7 +45,7 @@ export class PostsService {
           }
           return postsArray;
         }),
-        catchError(errorRes => {
+        catchError((errorRes) => {
           //Send to analytics server
           return throwError(errorRes);
         })
