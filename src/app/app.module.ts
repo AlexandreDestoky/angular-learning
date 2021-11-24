@@ -4,7 +4,8 @@ import { FormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptorService } from './auth-interceptor.service';
 
 // import { AppRoutingModule } from './app-routing.module';
 
@@ -21,7 +22,13 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     // AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:AuthInterceptorService,
+      multi:true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
