@@ -12,8 +12,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   constructor() { }
  
   ngOnInit() {
-    let count = 0;
     const customInternalObservable = new Observable<number>( observer => {
+      let count = 0;
       setInterval( () => {
         observer.next(count++)
       }, 1000);
