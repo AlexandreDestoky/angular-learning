@@ -16,6 +16,7 @@ export class AppComponent implements OnInit {
 
   affiche() {
     console.log(this.ValeurForm.value)
+    console.log(this.ValeurForm)
   }
   // affiche(form: NgForm) {
   //   console.log(form.value)
