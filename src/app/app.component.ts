@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Form, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import {
+  Form,
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  NgForm,
+  Validators,
+} from '@angular/forms';
 import { contactFormulaire } from './contactFormulaire.modele';
 import { country } from './country.modele';
 
@@ -9,8 +16,30 @@ import { country } from './country.modele';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  constructor() {}
-  ngOnInit() {}
+  constructor(private formBuilder: FormBuilder) {}
+  contactForm;
+  ngOnInit() {
+    this.contactForm = this.formBuilder.group({
+      firstname: ['', [Validators.required, Validators.minLength(10)]],
+      lastname: [
+        '',
+        [
+          Validators.required,
+          Validators.maxLength(15),
+          Validators.pattern('^[a-zA-Z]+$'),
+        ],
+      ],
+      email: ['', [Validators.required, Validators.email]],
+      gender: ['', [Validators.required]],
+      isMarried: ['', [Validators.required]],
+      country: ['', [Validators.required]],
+      address: this.formBuilder.group({
+        city: ['', [Validators.required]],
+        street: ['', [Validators.required]],
+        pincode: ['', [Validators.required]],
+      }),
+    });
+  }
   // contact: contactForm;
 
   // ngOnInit() {
@@ -37,14 +66,15 @@ export class AppComponent implements OnInit {
   //   form.resetForm();
   // }
 
-  contactForm = new FormGroup({
-    firstname: new FormControl("jean"),
-    lastname: new FormControl("",[Validators.required,Validators.minLength(10)]),
-    email: new FormControl(),
-    gender: new FormControl(),
-    isMarried: new FormControl(),
-    country: new FormControl(),
-  });
+  // contactForm = new FormGroup({
+  //   firstname: new FormControl("jean"),
+  //   lastname: new FormControl("",[Validators.required,Validators.minLength(10)]),
+  //   email: new FormControl(),
+  //   gender: new FormControl(),
+  //   isMarried: new FormControl(),
+  //   country: new FormControl(),
+  // });
+
 
   onSubmitReactive() {
     console.log(this.contactForm.value);
