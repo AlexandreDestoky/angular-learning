@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -13,4 +14,7 @@ export class AppComponent implements OnInit {
   //   const suggestedName = 'Superuser';
   // }
 
+  affiche(form: NgForm) {
+    console.log(form.value)
+  }
 }
