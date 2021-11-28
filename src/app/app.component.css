@@ -8,7 +8,14 @@
 }
 
 
-
 .active {
   border-bottom:4px solid cornflowerblue;
+}
+
+p {
+  text-align: right;
+}
+
+label {
+  padding: 5px;
 }
