@@ -1,51 +1,53 @@
-<form #formulaire="ngForm" (ngSubmit)="affichage(formulaire)">
+<form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
   <p>
-    <label for="firstname">First Name</label>
-    <input type="text" id="firstname" name="firstname" ngModel/>
+    <label for="firstname">First Name </label>
+    <input type="text" id="firstname" name="firstname" [(ngModel)]="contact.firstname" />
   </p>
 
   <p>
-    <label for="lastname">Last Name</label>
-    <input type="text" id="lastname" name="lastname" ngModel/>
+    <label for="lastname">Last Name </label>
+    <input type="text" id="lastname" name="lastname" [(ngModel)]="contact.lastname" />
   </p>
 
-  <!-- <p>
+  <p>
     <label for="email">Email </label>
-    <input type="text" id="email" name="email" ngModel/>
+    <input type="text" id="email" name="email" [(ngModel)]="contact.email"/>
   </p>
 
   <p>
-    <label for="gender">Geneder</label>
-    <input type="radio" value="male" id="gender" name="gender" ngModel/> Male
-    <input type="radio" value="female" id="gender" name="gender" ngModel/> Female
+    <label for="gender">Geneder </label>
+    <input type="radio" value="male" id="gender" name="gender" [(ngModel)]="contact.gender" /> Male
+    <input type="radio" value="female" id="gender" name="gender" [(ngModel)]="contact.gender"/>
+    Female
   </p>
 
   <p>
-    <label for="isMarried">Married</label>
-    <input type="checkbox" id="isMarried" name="isMarried" ngModel/>
+    <label for="isMarried">Married </label>
+    <input type="checkbox" id="isMarried" name="isMarried" [(ngModel)]="contact.isMarried"/>
   </p>
 
   <p>
     <label for="country">country </label>
-    <select name="country" id="country" ngModel>
-      <option selected="" value=""></option>
+    <select id="country" name="country" [(ngModel)]="contact.country">
       <option [ngValue]="c.id" *ngFor="let c of countryList">
         {{ c.name }}
       </option>
     </select>
-  </p> -->
-  <div ngModelGroup="adresse">
+  </p>
+
+  <div ngModelGroup="address">
     <p>
-      <label for="">Ville</label>
-      <input type="text" name="ville" id="Ville" ngModel>
+      <label for="city">City</label>
+      <input type="text" id="city" name="city" [(ngModel)]="contact.address.city" />
+    </p>
+
+    <p>
+      <label for="street">Street</label>
+      <input type="text" id="street" name="street" [(ngModel)]="contact.address.street"/>
     </p>
     <p>
-      <label for="">Code Postal</label>
-      <input type="text" name="codePostal" ngModel>
-    </p>
-    <p>
-      <label for="">Rue</label>
-      <input type="text" name="rue" ngModel>
+      <label for="pincode">Pin Code</label>
+      <input type="text" id="pincode" name="pincode" [(ngModel)]="contact.address.pincode" />
     </p>
   </div>
 
@@ -53,4 +55,3 @@
     <button type="submit">Submit</button>
   </p>
 </form>
-
