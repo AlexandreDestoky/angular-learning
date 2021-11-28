@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -14,7 +14,11 @@ export class AppComponent implements OnInit {
   //   const suggestedName = 'Superuser';
   // }
 
-  affiche(form: NgForm) {
-    console.log(form.value)
+  affiche() {
+    console.log(this.ValeurForm.value)
   }
+  // affiche(form: NgForm) {
+  //   console.log(form.value)
+  // }
+  @ViewChild("formulaire") ValeurForm;
 }
