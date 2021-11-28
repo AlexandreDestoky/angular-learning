@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Form, NgForm } from '@angular/forms';
-import { contactForm } from './contactForm.modele';
+import { Form, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { contactFormulaire } from './contactFormulaire.modele';
 import { country } from './country.modele';
 
 @Component({
@@ -10,19 +10,20 @@ import { country } from './country.modele';
 })
 export class AppComponent implements OnInit {
   constructor() {}
-  contact: contactForm;
+  ngOnInit() {}
+  // contact: contactForm;
 
-  ngOnInit() {
-    this.contact = {
-      firstname: 'Sachin',
-      lastname: 'Tendulkar',
-      email: 'sachin@gmail.com',
-      gender: 'male',
-      isMarried: true,
-      country: '2',
-      address: { city: 'Mumbai', street: 'Perry Cross Rd', pincode: '400050' },
-    };
-  }
+  // ngOnInit() {
+  //   this.contact = {
+  //     firstname: 'Sachin',
+  //     lastname: 'Tendulkar',
+  //     email: 'sachin@gmail.com',
+  //     gender: 'male',
+  //     isMarried: true,
+  //     country: '2',
+  //     address: { city: 'Mumbai', street: 'Perry Cross Rd', pincode: '400050' },
+  //   };
+  // }
 
   countryList: country[] = [
     new country('1', 'India'),
@@ -30,9 +31,22 @@ export class AppComponent implements OnInit {
     new country('3', 'England'),
   ];
 
-  onSubmit(form : NgForm) {
-    console.log(form.value);
-    console.log('----');
-    form.resetForm();
+  // onSubmit(form : NgForm) {
+  //   console.log(form.value);
+  //   console.log('----');
+  //   form.resetForm();
+  // }
+
+  contactForm = new FormGroup({
+    firstname: new FormControl("jean"),
+    lastname: new FormControl("",[Validators.required,Validators.minLength(10)]),
+    email: new FormControl(),
+    gender: new FormControl(),
+    isMarried: new FormControl(),
+    country: new FormControl(),
+  });
+
+  onSubmitReactive() {
+    console.log(this.contactForm.value);
   }
 }

@@ -1,4 +1,4 @@
-export class contactForm {
+export class contactFormulaire {
   firstname: string;
   lastname: string;
   email: string;
