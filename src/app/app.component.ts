@@ -38,5 +38,7 @@ export class AppComponent implements OnInit {
     this.user.secretQuestion = this.valeurForm.value.question;
     this.user.answer = this.valeurForm.value.questionAnswer;
     this.user.gender = this.valeurForm.value.gender;
+
+    this.valeurForm.reset();
   }
 }
