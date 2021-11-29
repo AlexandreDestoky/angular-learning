@@ -7,6 +7,7 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
+  @ViewChild("formulaire") ValeurForm;
   constructor() {}
   ngOnInit() {
   }
@@ -18,8 +19,6 @@ export class AppComponent implements OnInit {
     console.log(this.ValeurForm.value)
     console.log(this.ValeurForm)
   }
-  // affiche(form: NgForm) {
-  //   console.log(form.value)
-  // }
-  @ViewChild("formulaire") ValeurForm;
+  defaultQuestion = "pet";
+
 }
