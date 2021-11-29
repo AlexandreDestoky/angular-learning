@@ -8,6 +8,8 @@ import { NgForm } from '@angular/forms';
 })
 export class AppComponent implements OnInit {
   @ViewChild('formulaire') ValeurForm: NgForm;
+
+  genders = ['male', 'femme'];
   constructor() {}
   ngOnInit() {}
   // suggestUserName() {
