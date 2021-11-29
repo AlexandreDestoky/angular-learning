@@ -8,33 +8,35 @@ import { NgForm } from '@angular/forms';
 })
 export class AppComponent implements OnInit {
   @ViewChild('formulaire') valeurForm: NgForm;
-
   genders = ['male', 'femme'];
-  constructor() {}
+  defaultQuestion = 'teacher';
+  user = {
+    username: '',
+    email: '',
+    secretQuestion: '',
+    answer: '',
+    gender: '',
+  };
+  submitted= false;
+
   ngOnInit() {}
+
   suggestUserName() {
-    console.log("ça marche !")
     const suggestedName = 'Superuser';
     this.valeurForm.form.patchValue({
       userData: {
         username: suggestedName,
-      }
-    })
-    // this.valeurForm.setValue({
-    //   userData: {
-    //     username: suggestedName,
-    //     email:""
-    //   },
-    //   question:"",
-    //   questionAnswer:'',
-    //   gender:"male"
-    // })
-
+      },
+    });
   }
 
   affiche() {
     console.log(this.valeurForm.value);
-    console.log(this.valeurForm);
+    this.submitted = true;
+    this.user.username = this.valeurForm.value.userData.username;
+    this.user.email = this.valeurForm.value.userData.email;
+    this.user.secretQuestion = this.valeurForm.value.question;
+    this.user.answer = this.valeurForm.value.questionAnswer;
+    this.user.gender = this.valeurForm.value.gender;
   }
-  defaultQuestion = 'teacher';
 }
