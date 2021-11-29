@@ -7,18 +7,16 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  @ViewChild("formulaire") ValeurForm;
+  @ViewChild('formulaire') ValeurForm: NgForm;
   constructor() {}
-  ngOnInit() {
-  }
+  ngOnInit() {}
   // suggestUserName() {
   //   const suggestedName = 'Superuser';
   // }
 
   affiche() {
-    console.log(this.ValeurForm.value)
-    console.log(this.ValeurForm)
+    console.log(this.ValeurForm.value);
+    console.log(this.ValeurForm);
   }
-  defaultQuestion = "pet";
-
+  defaultQuestion = 'teacher';
 }
