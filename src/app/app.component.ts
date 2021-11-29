@@ -7,18 +7,34 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  @ViewChild('formulaire') ValeurForm: NgForm;
+  @ViewChild('formulaire') valeurForm: NgForm;
 
   genders = ['male', 'femme'];
   constructor() {}
   ngOnInit() {}
-  // suggestUserName() {
-  //   const suggestedName = 'Superuser';
-  // }
+  suggestUserName() {
+    console.log("ça marche !")
+    const suggestedName = 'Superuser';
+    this.valeurForm.form.patchValue({
+      userData: {
+        username: suggestedName,
+      }
+    })
+    // this.valeurForm.setValue({
+    //   userData: {
+    //     username: suggestedName,
+    //     email:""
+    //   },
+    //   question:"",
+    //   questionAnswer:'',
+    //   gender:"male"
+    // })
+
+  }
 
   affiche() {
-    console.log(this.ValeurForm.value);
-    console.log(this.ValeurForm);
+    console.log(this.valeurForm.value);
+    console.log(this.valeurForm);
   }
   defaultQuestion = 'teacher';
 }
