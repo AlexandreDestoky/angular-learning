@@ -4,8 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
-import { CardlistComponent } from './cardlist/cardlist.component';
-import { CardComponent } from './card/card.component';
+
 
 
 // import { AppRoutingModule } from './app-routing.module';
@@ -16,8 +15,7 @@ import { CardComponent } from './card/card.component';
 @NgModule({
   declarations: [
     AppComponent,
-    CardlistComponent,
-    CardComponent,
+
   ],
   imports: [
     BrowserModule,

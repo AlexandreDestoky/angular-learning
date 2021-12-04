@@ -34,7 +34,7 @@
         <div class="radio" *ngFor="let gender of genders">
           <label>
             <input type="radio" formControlName="gender" [value]="gender" />{{
-              gender
+              gender | uppercase
             }}
           </label>
         </div>
@@ -50,4 +50,3 @@
     </div>
   </div>
 </div>
-<!-- explication pipes  -->
