@@ -10,6 +10,17 @@ export class AppComponent implements OnInit {
   genders = ['male', 'female'];
   signupForm : FormGroup
   ajd = new Date();
+  texteTest = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat autem
+  inventore laboriosam tenetur, adipisci rerum doloremque vero, libero delectus
+  suscipit soluta excepturi blanditiis maxime perspiciatis cupiditate esse
+  architecto in officiis. Voluptatum eum delectus, sunt ex quis rem laboriosam
+  aspernatur, reprehenderit asperiores ea quidem numquam magni deserunt
+  molestiae similique amet soluta in laborum quo quisquam exercitationem illo!
+  Omnis enim recusandae sunt laudantium nisi voluptate placeat non accusantium
+  libero rem, explicabo consequatur ea earum quia, reiciendis in inventore et
+  perferendis, cumque temporibus animi? Modi dolorem aliquam est reprehenderit,
+  alias soluta itaque omnis veniam eius, perspiciatis obcaecati voluptates
+  quidem architecto, minima exercitationem deserunt.`
   
   
   ngOnInit() {
