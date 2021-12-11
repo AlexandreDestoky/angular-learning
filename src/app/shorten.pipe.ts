@@ -11,3 +11,4 @@ export class ShortenPipe implements PipeTransform {
 
 }
 // ASYNC is very useful to detect change in value async like API CALL
+// Explication about Authentification
